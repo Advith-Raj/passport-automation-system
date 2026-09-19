@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  // State to track if the button has been clicked
+  const [isChanged, setIsChanged] = useState(false);
+
+  // Function to toggle the state
+  const handleClick = () => {
+    setIsChanged(!isChanged);
+  };
+
+  return (
+    <div className={`container ${isChanged ? 'alt-bg' : 'default-bg'}`}>
+      <h1 className="message">
+        {isChanged ? 'Welcome to the React World!' : 'Hello World'}
+      </h1>
+      <button className="toggle-btn" onClick={handleClick}>
+        Change Message
+      </button>
+    </div>
+  );
+}
+
+export default App;
